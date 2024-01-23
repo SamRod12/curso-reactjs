@@ -1,0 +1,66 @@
+.TodoItem{
+    background-color:#141414e5;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:24px;
+}
+.TodoItem-p{
+    margin:24px 0 24px 24px;
+    width:calc(100% - 120px);
+    font-size:18px;
+    line-height:24px;
+    font-weight:400
+}
+.TodoItem-p--complete{
+    color: #00ffffa9;
+    text-decoration:line-through;
+    text-decoration-color: #00ffffa9;
+    text-decoration-thickness: 4px;
+}
+.Icon{
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:40px;
+    width:40px;
+    font-size:24px;
+    font-weight:700; /* Sombra para resaltar el icono */
+    transition: transform 0.5s ease, color 0.3s ease; /* Transiciones suaves */
+    transform-style: preserve-3d; /* Indica que los elementos hijos deben conservar su 3D */
+    perspective: 1000px; 
+}
+.Icon:hover{
+    transform: rotateX(390deg) rotateY(40deg) scale(2);
+    filter: saturate(1000%);
+}
+.Icon-check.figure svg:hover {
+    filter: drop-shadow(2px 2px 10px #0dff15) brightness(1.5) saturate(1.5);
+  }
+  
+.Icon-delete.figure svg:hover {
+filter: drop-shadow(2px 2px 10px #ff0d0d) brightness(1.5) saturate(1.5);
+}
+  
+.Icon-check{
+    position:absolute;
+    left:12px
+}
+.Icon-check--active{
+    color:#2fda35;
+}
+.Icon-check--active:hover{
+    color:#3bd140;
+}
+.Icon-delete{
+    position:absolute;
+    top:0vw;
+    right:2vh;
+    color:rgb(11, 240, 229);
+}
+.Icon-delete:hover{
+    color:rgb(255, 0, 0);
+    
+}
