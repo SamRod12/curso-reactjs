@@ -1,3 +1,4 @@
+import "./TodoSearch.css";
 
 function TodoSearch({searchValue, setSearchValue})  {
 
@@ -6,7 +7,7 @@ function TodoSearch({searchValue, setSearchValue})  {
       <div className="input-container">
         <input  
         className="TodoSearch" 
-        placeholder="Busca un TODO"
+        placeholder="Busca o agrega un TODO"
         value={searchValue}
         onChange={(event)=>{
           setSearchValue(event.target.value);          

@@ -92,7 +92,7 @@ button:hover {
   max-width: 1200px;
   border-radius: 10px;
   flex: 1;
-  
+  height: 35vw;
   overflow-y: auto;
   max-height: calc(100vh - 10vw);
 }

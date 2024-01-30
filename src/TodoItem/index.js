@@ -1,5 +1,5 @@
 import { FaRegCheckSquare , FaTimes  } from "react-icons/fa";
-
+import "./TodoItem.css";
 
 function TodoItem(props){
     return (
