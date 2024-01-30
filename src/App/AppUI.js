@@ -8,6 +8,7 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import { TodoLoading } from "../TodoLoading";
 import { EmptyTodo } from "../EmptyTodo";
 import { TodoError } from "../TodoError";
+import { TodoSearchLoading } from "../TodoSearchLoading";
 const MemoizedGalacticStars = React.memo(GalacticStars);
 
 function AppUI({
@@ -46,7 +47,8 @@ function AppUI({
               <TodoList >
                 {loading && <TodoLoading/>}
                 {error && <TodoError/>}
-                {(!loading && searchedTodos.length === 0) && <EmptyTodo/>}
+                {(!loading && (searchedTodos.length === 0 && searchValue === "")) && <EmptyTodo/>}
+                {(!loading && (searchedTodos.length === 0 && searchValue !== "")) && <TodoSearchLoading/>}
                 
                 {searchedTodos.map(todo => (
                   <TodoItem key={todo.text} text={todo.text} completed={todo.completed} onComplete={() => completeTodo(todo.text)} onDelete={() => deleteTodo(todo.text)}/>
