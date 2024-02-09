@@ -1,10 +1,11 @@
 import React from 'react';
 import './GalacticStars.css'; // Importa los estilos específicos para las estrellas
-
+//import { EmptyTodo } from '../EmptyTodo';
 const GalacticStars = () => {
   const renderStars = () => {
     const stars = [];
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 50; i++) {
+      
       stars.push(
         <div
           key={i}
@@ -16,6 +17,19 @@ const GalacticStars = () => {
           }}
         />
       );
+      /*
+      stars.push(
+        <div
+          key={i}
+          className={`stars `}
+          style={{
+            ...generateRandomStyles(),
+            animationDuration: `${Math.random() * 10 + 7}s`, // Duración entre 1 y 3 segundos
+            animationDelay: `-${Math.random() * 10}s`, // Retraso entre 0 y -2 segundos
+          }}
+        ><EmptyTodo/></div>
+      );
+      */
     }
     return stars;
   };

@@ -1,5 +1,6 @@
-.TodoList{
-    margin:0;
-    padding: 0 0 56px 0;
+.TodoList {
+    margin: 0;
+    padding: 0 0 2vw 0; /* Ajuste relativo */
     list-style: none;
-}
+  }
+  

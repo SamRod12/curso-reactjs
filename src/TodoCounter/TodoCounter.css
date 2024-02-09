@@ -1,10 +1,12 @@
-h1{
-    font-size: 24px;
+h1 {
+    font-size: 2.5vw; /* Ajuste relativo */
     text-align: center;
     margin: 0;
-    padding: 48px;
+    padding: 3vw; /* Ajuste relativo */
     font-weight: normal;
-}
-.TodoCounter span{
+  }
+  
+  .TodoCounter span {
     font-weight: bold;
-}
+  }
+  

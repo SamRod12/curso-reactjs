@@ -1,37 +1,38 @@
-.TodoItem{
-    background-color:#141414e5;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:24px;
-}
-.TodoItem-p{
-    margin:24px 0 24px 24px;
-    width:calc(100% - 120px);
-    font-size:18px;
-    line-height:24px;
-    font-weight:400
-}
+.TodoItem {
+    background-color: #141414e5;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5vw; /* Ajuste relativo */
+  }
+  
+  .TodoItem-p {
+    margin: 1.5vw 0 1.5vw 2vw; /* Ajuste relativo */
+    width: calc(100% - 10vw); /* Ajuste relativo */
+    font-size: 1.5vw; /* Ajuste relativo */
+    line-height: 2vw; /* Ajuste relativo */
+    font-weight: 400;
+  }
 .TodoItem-p--complete{
     color: #00ffffa9;
     text-decoration:line-through;
     text-decoration-color: #00ffffa9;
     text-decoration-thickness: 4px;
 }
-.Icon{
-    cursor:pointer;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:40px;
-    width:40px;
-    font-size:24px;
-    font-weight:700; /* Sombra para resaltar el icono */
+.Icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vw; /* Ajuste relativo */
+    width: 3vw; /* Ajuste relativo */
+    font-size: 2vw; /* Ajuste relativo */
+    font-weight: 700; /* Sombra para resaltar el icono */
     transition: transform 0.5s ease, color 0.3s ease; /* Transiciones suaves */
     transform-style: preserve-3d; /* Indica que los elementos hijos deben conservar su 3D */
-    perspective: 1000px; 
-}
+    perspective: 1000px;
+  }
 .Icon:hover{
     transform: rotateX(390deg) rotateY(40deg) scale(2);
     filter: saturate(1000%);

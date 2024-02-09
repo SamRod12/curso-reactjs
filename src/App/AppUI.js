@@ -8,60 +8,67 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import { TodoLoading } from "../TodoLoading";
 import { EmptyTodo } from "../EmptyTodo";
 import { TodoError } from "../TodoError";
-import { TodoSearchLoading } from "../TodoSearchLoading";
+import { TodoContext } from "../TodoContext";
+import { Modal } from "../Modal";
+import {TodoForm} from "../TodoForm"
+//import { TodoSearchLoading } from "../TodoSearchLoading";
 const MemoizedGalacticStars = React.memo(GalacticStars);
 
-function AppUI({
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-    createTodo,
-    loading,
-    error
-}) {
-  
+function AppUI() {
+  const {
+    
+      searchedTodos,
+      completeTodo,
+      deleteTodo,
+      loading,
+      error,
+      openModal,
+    
+  } = React.useContext(TodoContext)
   return (
-    <div className="contenedor">
-      <div className="c-izquierda">
-        
-          <div className="contenedor-izquierdo">
-            <div className="contenido-izquierdo">
-              <TodoCounter completed={completedTodos} total={totalTodos}/>
-              <TodoSearch 
-              searchValue={searchValue}
-              setSearchValue={setSearchValue}
-              />
-              <CreateTodoButton onCreateTodo={() => createTodo(searchValue)}/>
-            </div>
-          </div>
-          
-      </div>
-      <div className="c-derecha">
-        
-          <div className="contenedor-derecho">
-            <div className="contenido-derecho">
-              <TodoList >
-                {loading && <TodoLoading/>}
-                {error && <TodoError/>}
-                {(!loading && (searchedTodos.length === 0 && searchValue === "")) && <EmptyTodo/>}
-                {(!loading && (searchedTodos.length === 0 && searchValue !== "")) && <TodoSearchLoading/>}
+    
+            <div className="contenedor">
+              <div className="c-izquierda">
                 
-                {searchedTodos.map(todo => (
-                  <TodoItem key={todo.text} text={todo.text} completed={todo.completed} onComplete={() => completeTodo(todo.text)} onDelete={() => deleteTodo(todo.text)}/>
-                ))}
-              </TodoList >
-            </div>
+                  <div className="contenedor-izquierdo">
+                    <div className="contenido-izquierdo">
+                      <TodoCounter />
+                      <TodoSearch/>
+                      <CreateTodoButton />
+                    </div>
+                  </div>
+                  
+              </div>
+              <div className="c-derecha">
+                
+                  <div className="contenedor-derecho">
+                    <div className="contenido-derecho">
+                    
+                      <TodoList >
+                        {loading && <TodoLoading/>}
+                        {error && <TodoError/>}
+                        {(!loading && searchedTodos.length === 0 ) && <EmptyTodo/>}
+                        
+                        {searchedTodos.map(todo => (
+                          <TodoItem key={todo.text} text={todo.text} completed={todo.completed} onComplete={() => completeTodo(todo.text)} onDelete={() => deleteTodo(todo.text)}/>
+                        ))}
+                      </TodoList >
+                    </div>
+                  </div>
+                
+                  
+                
+              </div>
+              <MemoizedGalacticStars />
+              {openModal && (
+                <Modal>
+                  <TodoForm/>
+                </Modal>
+              )}
+            
           </div>
-        
-          
-        
-      </div>
-      <MemoizedGalacticStars />
-    </div>
+
+      
   );
 }
 export { AppUI };
