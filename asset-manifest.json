@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/curso-reactjs/static/css/main.74336a7c.css",
+    "main.js": "/curso-reactjs/static/js/main.5c292e55.js",
+    "index.html": "/curso-reactjs/index.html",
+    "static/media/icons8-super-smash-bros.svg": "/curso-reactjs/static/media/icons8-super-smash-bros.462c6927bd8a92f1f3a6f2ef45e96116.svg",
+    "main.74336a7c.css.map": "/curso-reactjs/static/css/main.74336a7c.css.map",
+    "main.5c292e55.js.map": "/curso-reactjs/static/js/main.5c292e55.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74336a7c.css",
+    "static/js/main.5c292e55.js"
+  ]
+}
